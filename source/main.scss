@@ -1,0 +1,102 @@
+@use 'config/reset.scss';
+@use 'config/variaveis.scss';
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+
+header{
+    background-color: variaveis.$corPrincipal;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+}
+
+li {
+    list-style: none;
+}
+
+.menu {
+    display: flex;
+
+    li {
+        font-weight: bold;
+        margin-left: 24px;
+    }
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+section {
+    padding: 56px 0;
+}
+
+.produtos {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+}
+
+.itens {
+    img {
+        width: 100%;
+        border-radius: 16px;
+    }
+}
+
+.button-item{
+    display: block;
+    background-color: #44bd32;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: darken(variaveis.$corbutton, 25%);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .produtos {
+        display: block;
+    }
+
+    .itens  {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
